@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'secao3';
+export class AppComponent {  
+  cardPlanType = 'Simples';
+  cardPlanPrice = 100;
 }
