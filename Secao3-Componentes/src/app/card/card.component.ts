@@ -14,11 +14,26 @@ interface IInfos {
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  @Input('planTypeAlias') planType: string = '';
+
+  private _planType: string = '';
+
+  @Input('planTypeAlias') 
+  set planType(value: string){
+    this._planType = value.toUpperCase();
+  };
+  get planType(): string{
+    return this._planType;
+  }
+  
   @Input({required: true}) planPrice: number = 0;
+
+  
 
   buttonClicked(valueEmitted: boolean){
     console.log('evento do filho no pai', valueEmitted)
+  }
+  handlePlanType(value: string){
+this.planType = value
   }
  }
 
