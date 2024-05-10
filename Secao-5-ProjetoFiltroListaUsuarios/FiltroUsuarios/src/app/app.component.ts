@@ -33,23 +33,34 @@ export class AppComponent implements OnInit {
     this.usersListFiltered = this.filterUsersList(filter, this.usersList);
   }
 
-  filterUsersList(filter: IFilterOptions, list: IUser[]): IUser[]{
+  filterUsersList(filter: IFilterOptions, list: IUser[]): IUser[] {
     let filteredList: IUser[] = [];
-filteredList = this.filterUsersListByName(filter.name, list);
+    filteredList = this.filterUsersListByName(filter.name, list);
+    filteredList = this.filterUsersListByStatus(filter.status, filteredList);
     return filteredList;
   }
 
-  filterUsersListByName(name: string | undefined, list: IUser[]): IUser[]  {
+  filterUsersListByStatus(status: boolean | undefined, list: IUser[]): IUser[] {
+    const STATUS_NOT_SELECTED = status === undefined;
+    
+    if (STATUS_NOT_SELECTED) return list;
+
+    const filteredList = list.filter((user) => user.ativo === status);
+
+    return filteredList;
+  }
+
+  filterUsersListByName(name: string | undefined, list: IUser[]): IUser[] {
     const NAME_NOT_TYPPED = name == undefined;
 
-    if(NAME_NOT_TYPPED){
+    if (NAME_NOT_TYPPED) {
       return list;
     }
 
-    const filteredList = list.filter((user)=> user.nome.toLowerCase().includes(name.toLowerCase()));
+    const filteredList = list.filter((user) =>
+      user.nome.toLowerCase().includes(name.toLowerCase())
+    );
 
     return filteredList;
   }
-
-  
 }
