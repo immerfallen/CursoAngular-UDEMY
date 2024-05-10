@@ -4,11 +4,13 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { FilterComponent } from './filter/filter.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from "@angular/common";
+import { TableComponent } from './table/table.component';
 
 @NgModule({
     declarations: [
     UserDetailsComponent,
-    FilterComponent
+    FilterComponent,
+    TableComponent
   ],
     imports: [
         AngularMaterialModule,
@@ -18,7 +20,8 @@ import { CommonModule } from "@angular/common";
     exports: [
       UserDetailsComponent,
       FilterComponent,
-      FormsModule      
+      FormsModule,
+      TableComponent      
     ],
 })
 
