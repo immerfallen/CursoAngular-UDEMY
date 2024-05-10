@@ -6,7 +6,7 @@
     <div class="main-left-div">
       <app-table
         *ngIf="showHeaderTable"
-        [usersList]="usersList"
+        [usersList]="usersListFiltered"
         (userSelected)="onUserSelected($event)"
       ></app-table>
       <div class="main-left-div__spinner">
