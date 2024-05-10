@@ -10,6 +10,6 @@ import { PipesModule } from '../pipes/pipes.module';
 @NgModule({
   declarations: [UserDetailsComponent, FilterComponent, TableComponent],
   imports: [AngularMaterialModule, FormsModule, CommonModule, PipesModule],
-  exports: [UserDetailsComponent, FilterComponent, FormsModule, TableComponent],
+  exports: [UserDetailsComponent, FilterComponent, FormsModule, TableComponent, AngularMaterialModule ],
 })
 export class ComponentsModule {}

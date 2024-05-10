@@ -15,7 +15,14 @@
 }
 
 .main-left-div{
-    height: 80%;    
+    height: 80%;  
+    
+    &__spinner{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        height: 50px;
+    }
 }
 
 .right-div{
