@@ -9,10 +9,10 @@ export class AddressPipe implements PipeTransform {
   transform(address: IAddress): string {
     const INVALID_ADDRESS = 
     !address || 
-    !address.cidade || 
-    !address.estado || 
-    address.numero == null || address.numero === undefined 
-    !address.rua;
+    !address?.cidade || 
+    !address?.estado || 
+    address?.numero == null || address?.numero === undefined 
+    !address?.rua;
 
     if(INVALID_ADDRESS)
       return 'Endereço inválido.'
