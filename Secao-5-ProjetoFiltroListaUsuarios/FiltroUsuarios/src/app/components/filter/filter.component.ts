@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { IFilterOptions } from '../../interfaces/filter/filter-options.interface';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-filter',
@@ -24,12 +25,10 @@ filterOptions: IFilterOptions = {
   status: undefined
 }
 
-onStartDateChange(date: Date){
-  console.log(date.getMonth());
-}
+@Output('onFilter') onFilterEmitt = new EventEmitter<IFilterOptions>();
 
-onFilterClick(filter:IFilterOptions){
-  console.log(filter);
+onFilterClick(){
+  this.onFilterEmitt.emit(this.filterOptions);
 }
 
 }
