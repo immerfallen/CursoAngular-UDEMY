@@ -17,6 +17,10 @@ export class FilterComponent {
       value: false,
       viewValue: 'Inativo',
     },
+    {
+      value: undefined,
+      viewValue: ' ',
+    }
   ];
 filterOptions: IFilterOptions = {
   name: undefined,
